@@ -1,6 +1,7 @@
 #include "person.h"
 #include <iostream>
 using namespace std;
+
 person::person(){}
 person::person(string N, string G, string B, int A): Name(N), Gender(G), BirthDate(B), Age(A) {}
 void person::Set_Name(string N)
@@ -33,7 +34,7 @@ string person::Get_BirthDate()
 }
 int person::Get_Age()
 {
-	return Age;
+		return Age;
 }
 void person::input() {
 	cout << "Enter Name: ";
@@ -45,23 +46,23 @@ void person::input() {
 	cout << "Enter BirthDate (Year-Month-Day): ";
 	cin >> BirthDate;
 
-	while (true)
+	while (true) 
 	{
-	   cout << "Enter age: ";
-	   cin >> Age;
+		cout << "Enter age: ";
+		cin >> Age;
 
-	   if (cin.fail())
-	    {
-		cout << "Invalid input Enter true number ya niga: ";
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	    }
-	   else 
-	    {
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		break;
-	    }
-        }
+		if (cin.fail())
+		{
+			cout << "Invalid input Enter true number ya niga: ";
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+		else 
+		{
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
+		}
+	}
 }
 void person::display()
 {
@@ -70,6 +71,4 @@ void person::display()
 	cout << "\033[40;31m Gender: \033[0m" << "\033[40;34m" << Gender << "\033[0m" << endl;
 	cout << "\033[40;31m BirthDate: \033[0m" << "\033[40;34m" << BirthDate << "\033[0m" << endl;
 	cout << "\033[40;31m Age: \033[0m" << "\033[40;34m" << Age << "\033[0m" << endl;
-
 };
-
