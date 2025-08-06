@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 person::person(){}
-person::person(string N, string G, string B, string A): Name(N), Gender(G), BirthDate(B), Age(A) {}
+person::person(string N, string G, string B, int A): Name(N), Gender(G), BirthDate(B), Age(A) {}
 void person::Set_Name(string N)
 {
 	Name = N;
@@ -15,7 +15,7 @@ void person::Set_BirthDate(string B)
 {
 	BirthDate = B;
 }
-void person::Set_Age(string A)
+void person::Set_Age(int A)
 {
 	Age = A;
 }
@@ -31,9 +31,9 @@ string person::Get_BirthDate()
 {
 	return BirthDate;
 }
-string person::Get_Age()
+int person::Get_Age()
 {
-		return Age;
+	return Age;
 }
 void person::input() {
 	cout << "Enter Name: ";
@@ -72,3 +72,4 @@ void person::display()
 	cout << "\033[40;31m Age: \033[0m" << "\033[40;34m" << Age << "\033[0m" << endl;
 
 };
+
